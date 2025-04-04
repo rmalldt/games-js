@@ -1,3 +1,7 @@
+const { winningCombo } = require('./winning-combo');
+
+console.log(winningCombo);
+
 const gameBoardElem = document.querySelector('#game-board');
 
 const playerXElem = document.querySelector('.playerX');

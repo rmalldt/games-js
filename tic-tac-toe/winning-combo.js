@@ -1,4 +1,4 @@
-export default winningCombo = [
+const winningCombo = [
   [
     { row: 0, col: 0 },
     { row: 0, col: 1 },
@@ -40,3 +40,5 @@ export default winningCombo = [
     { row: 2, col: 0 },
   ],
 ];
+
+module.exports = { winningCombo };
