@@ -40,6 +40,7 @@ header {
 
 .players div {
   padding: 0 2rem;
+  margin-bottom: 1rem;
 
   display: flex;
   gap: 2rem;
@@ -50,7 +51,7 @@ header {
   border-radius: 5px;
 }
 
-.game-board {
+#game-board {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,18 +59,23 @@ header {
   flex-wrap: wrap;
 }
 
-.game-board ul {
+#game-board ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
 
-.game-board button {
+#game-board button {
   width: 6rem;
   height: 6rem;
   padding: 1rem;
 
   font-size: 3rem;
   cursor: pointer;
+}
+
+.score {
+  margin: 2rem 0;
+  text-align: center;
 }
