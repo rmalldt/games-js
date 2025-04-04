@@ -2,5 +2,7 @@
 
 This repo contains popular games built using JavaScript. The current version contains:
 
-- **1. Rock, Paper and Scissors**
-- **2. Tic-Tac-Toe**
+| Games               | Folder                         |
+| ------------------- | ------------------------------ |
+| Rock-Paper-Scissors | [Link](./rock-paper-scissors/) |
+| Tic-Tac-Toe         | [Link](./tic-tac-toe/)         |

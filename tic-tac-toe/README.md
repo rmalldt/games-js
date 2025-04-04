@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-A popular Tic-Tac-Toe game in the web app version where two players can play the game.
+A popular Tic-Tac-Toe game where two players can play the game of Tic-Tac-Toe.
 
 ### Start the game
 

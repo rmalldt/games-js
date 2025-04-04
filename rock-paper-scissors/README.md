@@ -1,4 +1,4 @@
-## Rock, Paper and Scissors - OOP JavaScript (Rupesh and Kyaw)
+## Rock, Paper and Scissors - OOP JavaScript
 
 A popular Rock, Paper and Scissors game built using JavaScript and OOP approach.
 
