@@ -5,12 +5,44 @@
 }
 
 html {
-  font-family: sans-serif;
-  line-height: 1.5;
-  color: #282828;
   box-sizing: border-box;
 }
 
 body {
+  min-height: 100dvh;
+
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #404040;
   background: lightblue;
+}
+
+header {
+  text-align: center;
+}
+
+.game {
+  width: 50rem;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgb(54, 54, 54);
+  color: #e1eeeb;
+  border-radius: 5px;
+}
+
+.players {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+
+  & div {
+    border: 2px solid lightgreen;
+    border-radius: 5px;
+    padding: 0 2rem;
+
+    display: flex;
+    gap: 2rem;
+  }
 }
