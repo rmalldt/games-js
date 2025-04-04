@@ -1,0 +1,15 @@
+{
+  "name": "rock-paper-scissors",
+  "version": "1.0.0",
+  "description": "A popular Rock, Paper and Scissors game built using JavaScript and OOP approach.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ansi-colors": "^4.1.3"
+  }
+}
