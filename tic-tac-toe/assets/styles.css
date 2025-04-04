@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #282828;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightblue;
+}
