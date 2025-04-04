@@ -8,6 +8,7 @@ A popular Rock, Paper and Scissors game built using JavaScript and OOP approach.
 ### Start the game
 
 ```
+git clone [repo]
 cd rock-paper-scissors
 node app.js
 ```
