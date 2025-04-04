@@ -58,6 +58,9 @@ function checkMoves() {
   ];
 
   console.log(gameboardStatus);
+
+  // TODO
+  // 1. Compare user input on every turn to check the winner
 }
 
 app();
