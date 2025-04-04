@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/styles.css" />
-    <script src="./index.js" defer></script>
+    <script type="module" src="./index.js" defer></script>
     <title>Tic-Tac-Toe</title>
   </head>
   <body>
@@ -12,17 +12,22 @@
       <h1>Welcome on board</h1>
       <h2>Let's play Tic-Tac-Toe</h2>
     </header>
+    <!-- Game container -->
     <div class="game">
+      <!-- Player section -->
       <section class="players">
+        <!-- Player-1 -->
         <div class="playerX active">
           <p>Player 1</p>
           <p>X</p>
         </div>
+        <!-- Player-2 -->
         <div class="playerO">
           <p>Player 2</p>
           <p>O</p>
         </div>
       </section>
+      <!-- Game board section -->
       <section id="game-board">
         <ul id="row-1">
           <li>
@@ -58,6 +63,7 @@
           </li>
         </ul>
       </section>
+      <!-- Score section -->
       <section class="score">Score</section>
     </div>
   </body>
