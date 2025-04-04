@@ -36,13 +36,40 @@ header {
   align-items: center;
 
   text-align: center;
+}
 
-  & div {
-    border: 2px solid lightgreen;
-    border-radius: 5px;
-    padding: 0 2rem;
+.players div {
+  padding: 0 2rem;
 
-    display: flex;
-    gap: 2rem;
-  }
+  display: flex;
+  gap: 2rem;
+}
+
+.active {
+  border: 2px solid lightgreen;
+  border-radius: 5px;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.game-board ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.game-board button {
+  width: 6rem;
+  height: 6rem;
+  padding: 1rem;
+
+  font-size: 3rem;
+  cursor: pointer;
 }
