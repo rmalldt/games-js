@@ -1,4 +1,4 @@
-const winningCombo = [
+export const winningCombo = [
   [
     { row: 0, col: 0 },
     { row: 0, col: 1 },
@@ -40,5 +40,3 @@ const winningCombo = [
     { row: 2, col: 0 },
   ],
 ];
-
-module.exports = { winningCombo };

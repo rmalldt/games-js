@@ -1,23 +1,21 @@
-const { winningCombo } = require('./winning-combo');
-
-console.log(winningCombo);
+import { winningCombo } from './winning-combo.js';
 
 const gameBoardElem = document.querySelector('#game-board');
 
 const playerXElem = document.querySelector('.playerX');
 const playerOElem = document.querySelector('.playerO');
 
+const r0b0 = document.querySelector('#row-0 .zero');
+const r0b1 = document.querySelector('#row-0 .one');
+const r0b2 = document.querySelector('#row-0 .two');
+
+const r1b0 = document.querySelector('#row-1 .zero');
 const r1b1 = document.querySelector('#row-1 .one');
 const r1b2 = document.querySelector('#row-1 .two');
-const r1b3 = document.querySelector('#row-1 .three');
 
+const r2b0 = document.querySelector('#row-2 .zero');
 const r2b1 = document.querySelector('#row-2 .one');
 const r2b2 = document.querySelector('#row-2 .two');
-const r2b3 = document.querySelector('#row-2 .three');
-
-const r3b1 = document.querySelector('#row-3 .one');
-const r3b2 = document.querySelector('#row-3 .two');
-const r3b3 = document.querySelector('#row-3 .three');
 
 function app() {
   console.log('Loading Game...');
@@ -40,14 +38,26 @@ function switchPlayer(playerX, playerO, currentPlayer) {
         currentPlayer = playerO;
         playerXElem.classList.remove('active');
         playerOElem.classList.add('active');
+        checkMoves();
       } else {
         targetElem.textContent = 'O';
         currentPlayer = playerX;
         playerOElem.classList.remove('active');
         playerXElem.classList.add('active');
+        checkMoves();
       }
     }
   });
+}
+
+function checkMoves() {
+  const gameboardStatus = [
+    [r0b0.textContent, r0b1.textContent, r0b2.textContent],
+    [r1b0.textContent, r1b1.textContent, r1b2.textContent],
+    [r2b0.textContent, r2b1.textContent, r2b2.textContent],
+  ];
+
+  console.log(gameboardStatus);
 }
 
 app();
