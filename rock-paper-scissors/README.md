@@ -18,4 +18,4 @@ node app.js
 
 ### Game Play
 
-![Game Play](./assets/game.png)
+<img src="./assets/game.png" alt="Game Screenshot" height="300">
