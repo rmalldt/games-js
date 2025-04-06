@@ -76,12 +76,22 @@ function displayResult(result) {
   const resultStr =
     result !== 'draw' ? `Player ${result.player} wins!` : `It's a tie!`;
 
+  result.combination.forEach(index => {
+    gameBoardElem.children[index].style.background = 'lightgreen';
+  });
+
   resultParaElem.textContent = resultStr;
+  resultParaElem.style.color = 'coral';
 }
 
 function resetGame() {
   if (!gameOn) {
-    [...gameBoard].forEach(square => (square.textContent = ''));
+    [...gameBoard].forEach(square => {
+      square.textContent = '';
+      square.style.background = 'white';
+    });
+    resultParaElem.textContent = 'Game On';
+    resultParaElem.style.color = 'lightgreen';
 
     gameOn = true;
   } else {
