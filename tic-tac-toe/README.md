@@ -2,10 +2,17 @@
 
 A popular Tic-Tac-Toe game where two players can play the game of Tic-Tac-Toe.
 
-### Start the game
+### Install and run the game
 
 ```
 git clone [repo]
+
 cd tic-tac-toe
+npm i
+
 npm run dev
 ```
+
+### Game Play
+
+![Game Play](./assets/game.png)
