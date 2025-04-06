@@ -72,13 +72,18 @@ function getResult() {
 }
 
 function displayResult(result) {
+  let resultStr;
   gameOn = false;
-  const resultStr =
-    result !== 'draw' ? `Player ${result.player} wins!` : `It's a tie!`;
 
-  result.combination.forEach(index => {
-    gameBoardElem.children[index].style.background = 'lightgreen';
-  });
+  if (result === 'draw') {
+    resultStr = `It's a tie!`;
+    [...gameBoard].forEach(square => (square.style.background = 'grey'));
+  } else {
+    resultStr = `Player ${result.player} wins!`;
+    result.combination.forEach(index => {
+      gameBoardElem.children[index].style.background = 'lightgreen';
+    });
+  }
 
   resultParaElem.textContent = resultStr;
   resultParaElem.style.color = 'coral';
@@ -92,7 +97,6 @@ function resetGame() {
     });
     resultParaElem.textContent = 'Game On';
     resultParaElem.style.color = 'lightgreen';
-
     gameOn = true;
   } else {
     alert('Please complete the current round.');
