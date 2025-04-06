@@ -21,7 +21,7 @@ header {
   text-align: center;
 }
 
-.game {
+#game {
   width: 50rem;
   margin: 3rem auto;
   padding: 2rem;
@@ -36,6 +36,8 @@ header {
   align-items: center;
 
   text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
 .players div {
@@ -52,30 +54,34 @@ header {
 }
 
 #game-board {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 8rem 8rem 8rem;
+  grid-template-rows: 8rem 8rem 8rem;
+  gap: 1rem;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+
+  & button {
+    text-align: center;
+    font-size: 4rem;
+  }
 }
 
-#game-board ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-#game-board button {
-  width: 6rem;
-  height: 6rem;
-  padding: 1rem;
-
-  font-size: 3rem;
-  cursor: pointer;
-}
-
-.score {
-  margin: 2rem 0;
+.result {
+  margin: 3rem 0rem 1rem;
   text-align: center;
+  color: lightgreen;
+  font-size: 1.3rem;
+
+  & button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+
+    background-color: lightgreen;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: rgb(87, 144, 87);
+    }
+  }
 }

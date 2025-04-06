@@ -1,66 +1,95 @@
-import { winningCombo } from './winning-combo.js';
+import { winningCombinations } from './winning-combo.js';
 
+// DOM elements
+const playerXElem = document.querySelector('.players .playerX');
+const playerOElem = document.querySelector('.players .playerO');
 const gameBoardElem = document.querySelector('#game-board');
+const resultParaElem = document.querySelector('.result p');
+const resetBtnElem = document.querySelector('.result button');
 
-const playerXElem = document.querySelector('.playerX');
-const playerOElem = document.querySelector('.playerO');
+// Game states
+const playerX = 'X';
+const playerO = 'O';
+const gameBoard = gameBoardElem.children;
+let currentPlayer = playerX;
+let gameOn = true;
 
-const r0b0 = document.querySelector('#row-0 .zero');
-const r0b1 = document.querySelector('#row-0 .one');
-const r0b2 = document.querySelector('#row-0 .two');
+// Initialize Game
+function initGame() {
+  for (let i = 0; i < 9; i++) {
+    const button = document.createElement('button');
+    button.append('');
+    gameBoardElem.appendChild(button);
+  }
 
-const r1b0 = document.querySelector('#row-1 .zero');
-const r1b1 = document.querySelector('#row-1 .one');
-const r1b2 = document.querySelector('#row-1 .two');
-
-const r2b0 = document.querySelector('#row-2 .zero');
-const r2b1 = document.querySelector('#row-2 .one');
-const r2b2 = document.querySelector('#row-2 .two');
-
-function app() {
-  console.log('Loading Game...');
-
-  const playerX = 'X';
-  const playerO = 'Y';
-  let currentPlayer = playerX;
-
-  switchPlayer(playerX, playerO, currentPlayer);
+  gameBoardElem.addEventListener('click', startGame);
+  resetBtnElem.addEventListener('click', resetGame);
 }
 
-function switchPlayer(playerX, playerO, currentPlayer) {
-  gameBoardElem.addEventListener('click', e => {
-    const targetElem = e.target;
+function startGame(e) {
+  const targetSquare = e.target;
 
-    if (targetElem.nodeName === 'BUTTON') {
-      console.log('Current Player: ', currentPlayer);
-      if (currentPlayer === playerX) {
-        targetElem.textContent = 'X';
-        currentPlayer = playerO;
-        playerXElem.classList.remove('active');
-        playerOElem.classList.add('active');
-        checkMoves();
-      } else {
-        targetElem.textContent = 'O';
-        currentPlayer = playerX;
-        playerOElem.classList.remove('active');
-        playerXElem.classList.add('active');
-        checkMoves();
-      }
+  if (gameOn) {
+    if (targetSquare.nodeName === 'BUTTON' && targetSquare.textContent === '') {
+      targetSquare.textContent = currentPlayer;
+      playerXElem.classList.toggle('active');
+      playerOElem.classList.toggle('active');
+      currentPlayer = currentPlayer === playerX ? playerO : playerX;
+    }
+
+    const result = getResult();
+    if (result) {
+      displayResult(result);
+    }
+  }
+}
+
+function getResult() {
+  let winner = null;
+  const board = [...gameBoard].map(square => square.textContent);
+
+  winningCombinations.forEach(combination => {
+    const firstSquare = board[combination[0]];
+    const secondSquare = board[combination[1]];
+    const thirdSquare = board[combination[2]];
+
+    if (
+      firstSquare &&
+      firstSquare === secondSquare &&
+      firstSquare === thirdSquare
+    ) {
+      winner = { player: firstSquare, combination: combination };
     }
   });
+
+  if (winner) {
+    return winner;
+  } else if (!winner && !board.includes('')) {
+    return 'draw';
+  } else {
+    return null;
+  }
 }
 
-function checkMoves() {
-  const gameboardStatus = [
-    [r0b0.textContent, r0b1.textContent, r0b2.textContent],
-    [r1b0.textContent, r1b1.textContent, r1b2.textContent],
-    [r2b0.textContent, r2b1.textContent, r2b2.textContent],
-  ];
+function displayResult(result) {
+  gameOn = false;
+  const resultStr =
+    result !== 'draw' ? `Player ${result.player} wins!` : `It's a tie!`;
 
-  console.log(gameboardStatus);
-
-  // TODO
-  // 1. Compare user input on every turn to check the winner
+  resultParaElem.textContent = resultStr;
 }
 
+function resetGame() {
+  if (!gameOn) {
+    [...gameBoard].forEach(square => (square.textContent = ''));
+
+    gameOn = true;
+  } else {
+    alert('Please complete the current round.');
+  }
+}
+
+function app() {
+  initGame();
+}
 app();
